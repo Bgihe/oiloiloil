@@ -55,7 +55,7 @@ def updateStockCode():
     # print(df)
 
     # df.columns = ['有價證券代號及名稱', '國際證券辨識號碼(ISIN Code)', '上市日', '市場別', '產業別', 'CFICode', '備註']
-    df.columns = ['油品供應商', '98無鉛汽油', '95無鉛汽油', '92無鉛汽油', '超(高)級柴油', '計價單位', '施行日期']
+    df.columns = ['test', '98無鉛汽油', '95無鉛汽油', '92無鉛汽油', '超(高)級柴油', '計價單位', '施行日期']
 
     result = df.to_json(orient="records")
     parsed = json.loads(result)
