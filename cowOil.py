@@ -25,7 +25,7 @@ def updateStockCode():
     df = pd.read_html(res.text)[0]
     df = df.iloc[1:]
     # df.columns = ['油品供應商', '98無鉛汽油', '95無鉛汽油', '92無鉛汽油', '超(高)級柴油', '計價單位', '施行日期']
-    df.columns = ['supplier', '98', '95', '92', 'diesel_oil', 'unit', 'date']
+    df.columns = ['supplier', 'octane98', 'octane95', 'octane92', 'dieselOil', 'unit', 'date']
     result = df.to_json(orient="records")
     parsed = json.loads(result)
     print(json.dumps(parsed, indent=4))  
