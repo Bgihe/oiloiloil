@@ -30,7 +30,8 @@ def updateStockCode():
     parsed = json.loads(result)
     print(json.dumps(parsed, indent=4))  
     writeStockCodeDict(json.dumps(parsed, indent=4))
-    pushJson()
+    
 
 
 updateStockCode()
+pushJson()
