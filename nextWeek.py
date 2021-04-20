@@ -29,7 +29,7 @@ print(soup.find("b", class_="rate").i.string)
 print(soup.find("b", class_="sys").string)
 
 oilDict = {}
-oilDict['rate'] = soup.find("b", class_="rate").i.string
+oilDict['rate'] = float(soup.find("b", class_="rate").i.string)
 oilDict['sys'] = soup.find("b", class_="sys").string
 writeOilDict(json.dumps(oilDict, indent=4))
 
