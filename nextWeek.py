@@ -31,17 +31,27 @@ print(soup.find("b", class_="sys").string)
 print(soup.find("b", id ="sPrice2").string)
 print(soup.find("b", id ="sPrice1").string)
 
-
-
 oilDict = {}
 oilDict['rate'] = float(soup.find("b", class_="rate").i.string)
 oilDict['sys'] = soup.find("b", class_="sys").string
+oilDict['newPrice'] = float(soup.find("b", id ="sPrice1").string)
+oilDict['newExchangeRate'] = float(soup.find("b", id ="sPrice2").string)
+
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+url = 'https://vipmember.tmtd.cpc.com.tw/mbwebs/oilCompareChart.aspx'
+driver.get(url)
+soup = BeautifulSoup(driver.page_source, 'html.parser')
 
 
-oilDict['sPrice1'] = soup.find("b", id ="sPrice1").float
-oilDict['sPrice2'] = soup.find("b", id ="sPrice2").string
+print(soup.find("span", id ="本週Dubai").string)
+print(soup.find("span", id ="本週匯率").string)
+print(soup.find("span", id ="本週92").string)
+
+oilDict['thisWeekAvgPrice'] = float(soup.find("span", id ="本週Dubai").string)
+oilDict['thisWeekExchangeRate'] = float(soup.find("span", id ="本週匯率").string)
+oilDict['thisWeekPrice'] = float(soup.find("span", id ="本週92").string)
+
 
 writeOilDict(json.dumps(oilDict, indent=4))
-
 driver.close()
 pushJson()
