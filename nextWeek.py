@@ -28,8 +28,8 @@ soup = BeautifulSoup(driver.page_source, 'html.parser')
 print(soup.find("b", class_="rate").i.string)
 print(soup.find("b", class_="sys").string)
 
-print(soup.find("b", id_="sPrice2"))
-print(soup.find("b", id_="sPrice1"))
+print(soup.find("b", id ="sPrice2"))
+print(soup.find("b", id ="sPrice1"))
 
 
 
