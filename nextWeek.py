@@ -28,6 +28,11 @@ soup = BeautifulSoup(driver.page_source, 'html.parser')
 print(soup.find("b", class_="rate").i.string)
 print(soup.find("b", class_="sys").string)
 
+print(soup.find("b", id_="sPrice2"))
+print(soup.find("b", id_="sPrice1"))
+
+
+
 oilDict = {}
 oilDict['rate'] = float(soup.find("b", class_="rate").i.string)
 oilDict['sys'] = soup.find("b", class_="sys").string
