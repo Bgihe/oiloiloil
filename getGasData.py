@@ -3,12 +3,11 @@ import os
 import json
 from git import Repo
 
-data = open('C:/Users/user/Downloads/data.csv', encoding="utf-8")
-rows = csv.reader(data)
 
 def writeStockCodeDict(writeDict):
-    with open("gasCompany.json", "w+") as output:
+    with open("gasCompany.json", "w") as output:
         output.write(str(writeDict))
+
 
 def pushJson():
     dirfile = os.path.abspath('')
@@ -22,10 +21,12 @@ def pushJson():
 
 
 dataList = []
-for row in rows:
+data = csv.reader(open('C:/Users/user/Downloads/data.csv', encoding="utf-8"))
+for row in data:
     if "加油站" in row[3]:
-        gasDict = {"companyName": str(row[3]), "companyAddress": str(row[0])}
+        gasDict = {'companyName': str(row[3]), 'companyAddress': str(row[0])}
         dataList.append(gasDict)
 
-writeStockCodeDict(json.dumps(dataList, indent=4))
+
+writeStockCodeDict(json.dumps(dataList, indent=2))
 pushJson()
