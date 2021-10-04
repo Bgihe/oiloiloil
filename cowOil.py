@@ -15,6 +15,7 @@ def pushJson():
     g.commit("-m auto update")
     g.push()
     print("Successful push!")
+    print("A")
 
 def writeStockCodeDict(writeDict):
     with open("/Users/steven/oiloiloil/oil.json", "w+") as output:
@@ -34,5 +35,21 @@ def updateStockCode():
     
 
 
-updateStockCode()
-pushJson()
+testDict = [{"test": "shit1"}, {"test": "shit2"}]
+
+
+testShitList = []
+testShit = {}
+testShit['test'] = "shit1"
+testShitList.append(testShit)
+testShit = {"test": "shit2"}
+testShitList.append(testShit)
+testShit = {"test": "shit3"
+testShitList.append(testShit)
+
+print(json.dumps(testShitList, indent=4)) 
+
+
+
+# updateStockCode()
+# pushJson()
