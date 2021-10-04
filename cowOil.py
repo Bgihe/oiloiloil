@@ -15,7 +15,7 @@ def pushJson():
     g.commit("-m auto update")
     g.push()
     print("Successful push!")
-    print("A")
+    print("N")
 
 
 def writeStockCodeDict(writeDict):
