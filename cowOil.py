@@ -17,6 +17,7 @@ def pushJson():
     print("Successful push!")
     print("N")
     print("M")
+    print("P")
 
 def writeStockCodeDict(writeDict):
     with open("/Users/steven/oiloiloil/oil.json", "w+") as output:
